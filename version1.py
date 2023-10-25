@@ -15,7 +15,10 @@ def print_countdown_time(remaining_time):
     for i in range(remaining_time, 0, -1):
         print(f"Remaining time: {i} seconds")
         time.sleep(1)
-
+        
+def button_clicked(b):
+    update_button_state(b, "中文时间", first_countdown)
+    
 def first_countdown(button):
     print_countdown_time(SLEEP_TIME)
     update_button_state(button, "English Time", second_countdown)
@@ -24,8 +27,6 @@ def second_countdown(button):
     print_countdown_time(SLEEP_TIME)
     update_button_state(button, "Good Night!")
 
-def button_clicked(b):
-    update_button_state(b, "中文时间", first_countdown)
 
 button.on_click(button_clicked)
 
